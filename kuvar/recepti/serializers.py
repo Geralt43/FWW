@@ -55,7 +55,7 @@ class UserSerializer(serializers.ModelSerializer):
         return user
 
     def validate_email(self, email):
-        hunter_key = 'e204013829e5e95de1cb0ab645e7a2b42cfc0890'
+        hunter_key = 'HUNTER_API_KEY'
         hunter = PyHunter(hunter_key)
 
         if hunter.email_verifier(email)['status'] not in ['valid','webmail']:
